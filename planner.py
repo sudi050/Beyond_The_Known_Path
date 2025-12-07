@@ -5,7 +5,10 @@ import json
 import logging
 from datetime import datetime, timedelta
 from typing import List, Dict
-from openai import OpenAI
+try:
+    from openai import OpenAI
+except Exception:
+    OpenAI = None
 from config import OPENAI_API_KEY
 from scraper_maps import MapsLoc
 
